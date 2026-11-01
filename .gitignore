@@ -1,0 +1,55 @@
+# Security Oak Microsoft 365 health check
+# Client data never belongs in this repository. Run output is written to
+# $HOME\SecurityOak\client-data\<client>\<yyyyMMdd>\ outside the repository,
+# and these rules are a second line of defence if anything lands here by mistake.
+
+# Run output and client data
+output/
+client-data/
+raw/
+*.csv
+*.log
+token-scopes.txt
+run-log.txt
+gaps.md
+findings.json
+endpoint-log.*
+
+# JSON: ignore everything except the placeholder example configs
+*.json
+!config/*.example.json
+# Report generator tooling (not client data): keep its manifest files
+!tools/report/package.json
+!tools/report/package-lock.json
+
+# Report generator dependencies (installed locally, not committed)
+tools/report/node_modules/
+
+# Per-client configuration (anything that is not an example)
+config/*
+!config/*.example.json
+# Approved reader app permission set: shared data, holds no client values
+!config/reader-app-permissions.json
+*.local.json
+*.local.psd1
+*.tenant.json
+
+# Certificates, keys, and secrets
+*.pfx
+*.p12
+*.cer
+*.crt
+*.pem
+*.key
+*.snk
+.env
+.env.*
+*.secret
+*.secrets
+
+# Editor and operating system noise
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store

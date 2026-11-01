@@ -1,0 +1,16 @@
+#!/bin/sh
+# Pre-commit secret scan with gitleaks. Enable once per clone:
+#   git config core.hooksPath .githooks
+# Blocks the commit if a staged change looks like a credential. To commit a known
+# false positive, add an inline "gitleaks:allow" comment on that line, or extend
+# .gitleaks.toml at the repository root.
+if ! command -v gitleaks >/dev/null 2>&1; then
+    echo "pre-commit: gitleaks is not on PATH; install it (winget install Gitleaks.Gitleaks) or commit with --no-verify if you must." >&2
+    exit 1
+fi
+# gitleaks 8.19 and later use "git --pre-commit"; older releases use "protect".
+if gitleaks git --help >/dev/null 2>&1; then
+    gitleaks git --pre-commit --staged --redact --no-banner
+else
+    gitleaks protect --staged --redact --no-banner
+fi

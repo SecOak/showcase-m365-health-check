@@ -1,0 +1,16 @@
+{
+  "name": "securityoak-report-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generates the client-facing Word (.docx) Microsoft 365 security health check report from a completed run folder.",
+  "main": "generate-report.js",
+  "bin": {
+    "securityoak-report": "generate-report.js"
+  },
+  "scripts": {
+    "start": "node generate-report.js"
+  },
+  "dependencies": {
+    "docx": "^9.7.2"
+  }
+}

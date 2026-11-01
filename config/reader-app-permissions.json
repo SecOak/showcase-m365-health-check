@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "description": "Approved least-privilege set for the Security Oak reader app. Single source of truth for setup, the health check module, and the documentation. Role IDs are resolved at runtime by permission value; expectedRoleId, when set, is asserted against the resolved ID.",
+  "resources": [
+    {
+      "name": "Microsoft Graph",
+      "resourceAppId": "00000003-0000-0000-c000-000000000000",
+      "permissions": [
+        {
+          "permission": "Directory.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Identity", "Devices", "Licensing", "Access", "Teams", "Intune", "Defender"],
+          "reason": "Users, groups, devices, applications, service principals, licenses, and delegated permission grants."
+        },
+        {
+          "permission": "Policy.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Identity", "Posture"],
+          "reason": "Conditional Access, security defaults, authorization, and authentication method policies."
+        },
+        {
+          "permission": "RoleManagement.Read.Directory",
+          "expectedRoleId": null,
+          "areas": ["Identity", "Access"],
+          "reason": "Directory role assignments and eligibility, including the reader app's own roles."
+        },
+        {
+          "permission": "AuditLog.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Identity", "Licensing", "Access"],
+          "reason": "Sign-in activity for stale accounts and license use, and the reader app's own sign-ins."
+        },
+        {
+          "permission": "IdentityRiskyUser.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Identity"],
+          "reason": "Users flagged at risk by Microsoft Entra ID Protection."
+        },
+        {
+          "permission": "IdentityRiskEvent.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Identity"],
+          "reason": "Risk detections behind risky users."
+        },
+        {
+          "permission": "DeviceManagementManagedDevices.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Devices", "Intune"],
+          "reason": "Intune managed devices, compliance state, and encryption."
+        },
+        {
+          "permission": "SharePointTenantSettings.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Sharing"],
+          "reason": "SharePoint and OneDrive external sharing settings."
+        },
+        {
+          "permission": "SecurityEvents.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Posture"],
+          "reason": "Microsoft Secure Score and improvement actions."
+        },
+        {
+          "permission": "Reports.Read.All",
+          "expectedRoleId": null,
+          "areas": ["Sharing", "Licensing"],
+          "reason": "Usage reports for sharing activity and license use."
+        },
+        {
+          "permission": "AccessReview.Read.All",
+          "expectedRoleId": "d07a8cc0-3d51-4b77-b3b0-32704d1f69fa",
+          "areas": ["Identity"],
+          "reason": "Access reviews, reviewers, decisions, and settings, for reviewing standing access."
+        },
+        {
+          "permission": "AttackSimulation.Read.All",
+          "expectedRoleId": "93283d0a-6322-4fa8-966b-8c121624760d",
+          "areas": ["Defender"],
+          "reason": "Attack simulation training campaigns and results."
+        },
+        {
+          "permission": "DeviceLocalCredential.ReadBasic.All",
+          "expectedRoleId": "db51be59-e728-414b-b800-e0f010df1a79",
+          "areas": ["Intune", "Identity"],
+          "reason": "Local administrator (LAPS) credential metadata managed by Intune, excluding the password itself."
+        },
+        {
+          "permission": "DeviceManagementApps.Read.All",
+          "expectedRoleId": "7a6ee1e7-141e-4cec-ae74-d9db155731ff",
+          "areas": ["Intune"],
+          "reason": "Intune-managed app properties, assignments, and protection policies."
+        },
+        {
+          "permission": "DeviceManagementConfiguration.Read.All",
+          "expectedRoleId": "dc377aa6-52d8-4e23-b271-2a7ae04cedf3",
+          "areas": ["Intune"],
+          "reason": "Intune device configuration profiles and their assignment status."
+        },
+        {
+          "permission": "DeviceManagementRBAC.Read.All",
+          "expectedRoleId": "58ca0d9a-1575-47e1-a3cb-007ef2e4583b",
+          "areas": ["Intune"],
+          "reason": "Intune role-based access control role definitions and assignments."
+        },
+        {
+          "permission": "DeviceManagementScripts.Read.All",
+          "expectedRoleId": "c7a5be92-2b3d-4540-8a67-c96dcaae8b43",
+          "areas": ["Intune"],
+          "reason": "Intune PowerShell and remediation scripts and their assignments."
+        },
+        {
+          "permission": "DeviceManagementServiceConfig.Read.All",
+          "expectedRoleId": "06a5fe6d-c49d-46a7-b082-56b1b14103c7",
+          "areas": ["Intune"],
+          "reason": "Intune enrollment and device configuration service settings."
+        },
+        {
+          "permission": "Domain.Read.All",
+          "expectedRoleId": "dbb9058a-0e50-45d7-ae91-66909b5d4664",
+          "areas": ["Identity", "Domain"],
+          "reason": "Verified domains, DNS records used for verification, and federation configuration."
+        },
+        {
+          "permission": "Organization.Read.All",
+          "expectedRoleId": "498476ce-e0fe-48b0-b801-37ba7e2685c6",
+          "areas": ["Teams", "Identity"],
+          "reason": "Tenant organization information, including verified domains and directory settings Teams depends on."
+        },
+        {
+          "permission": "RoleManagementPolicy.Read.Directory",
+          "expectedRoleId": "fdc4c997-9942-4479-bfcb-75a36d1138df",
+          "areas": ["Identity"],
+          "reason": "Privileged Identity Management policies for Microsoft Entra directory role assignments."
+        },
+        {
+          "permission": "SecurityAlert.Read.All",
+          "expectedRoleId": "472e4a4d-bb4a-4026-98d1-0b0d74cb74a5",
+          "areas": ["Defender", "Purview"],
+          "reason": "Microsoft 365 Defender and Purview security alerts."
+        },
+        {
+          "permission": "SecurityIncident.Read.All",
+          "expectedRoleId": "45cc0394-e837-488b-a098-1918f48d186c",
+          "areas": ["Defender"],
+          "reason": "Microsoft 365 Defender security incidents, correlated from alerts."
+        },
+        {
+          "permission": "ThreatHunting.Read.All",
+          "expectedRoleId": "dd98c7f5-2d42-42d3-a0e4-633161547251",
+          "areas": ["Defender"],
+          "reason": "Advanced hunting with a fixed set of read-only KQL queries. Advanced hunting is called through a POST; this is a logged, documented read-only exception."
+        },
+        {
+          "permission": "UserAuthenticationMethod.Read.All",
+          "expectedRoleId": "38d9df27-64da-44fd-b7c5-a6fbac20248f",
+          "areas": ["Identity"],
+          "reason": "Registered authentication methods per user, for MFA and passwordless coverage checks."
+        },
+        {
+          "permission": "Policy.Read.PermissionGrant",
+          "expectedRoleId": "9e640839-a198-48fb-8b9a-013fd6f6cbcd",
+          "areas": ["Identity"],
+          "reason": "Delegated and application permission grant policies, to review consent governance."
+        },
+        {
+          "permission": "Policy.Read.DeviceConfiguration",
+          "expectedRoleId": "bdba4817-6ba1-4a7c-8a01-be9bc7c242dd",
+          "areas": ["Identity", "Intune"],
+          "reason": "Device configuration policy read access, complementing Intune configuration profiles."
+        },
+        {
+          "permission": "BitlockerKey.ReadBasic.All",
+          "expectedRoleId": "f690d423-6b29-4d04-98c6-694c42282419",
+          "areas": ["Intune", "Identity"],
+          "reason": "BitLocker recovery key metadata only (key IDs and timestamps), never the recovery key itself."
+        },
+        {
+          "permission": "ServiceHealth.Read.All",
+          "expectedRoleId": "79c261e0-fe76-4144-aad5-bdc68fbe4037",
+          "areas": ["ServiceHealth"],
+          "reason": "Microsoft 365 service health status and incidents."
+        },
+        {
+          "permission": "ServiceMessage.Read.All",
+          "expectedRoleId": "1b620472-6534-4fe6-9df2-4680e8aa28ec",
+          "areas": ["ServiceHealth"],
+          "reason": "Microsoft 365 message center announcements and advisories."
+        },
+        {
+          "permission": "eDiscovery.Read.All",
+          "expectedRoleId": "50180013-6191-4d1e-a373-e590ff4e66af",
+          "areas": ["Purview"],
+          "reason": "eDiscovery cases, holds, and search configuration in Purview."
+        },
+        {
+          "permission": "BackupRestore-Control.Read.All",
+          "expectedRoleId": "6fe20a79-0e15-45a1-b019-834c125993a0",
+          "areas": ["Backup"],
+          "reason": "Microsoft 365 Backup protection policies and job status."
+        },
+        {
+          "permission": "BackupRestore-Configuration.Read.All",
+          "expectedRoleId": "5fbb5982-3230-4882-93c0-2167523ce0c2",
+          "areas": ["Backup"],
+          "reason": "Microsoft 365 Backup service configuration."
+        },
+        {
+          "permission": "ReportSettings.Read.All",
+          "expectedRoleId": "ee353f83-55ef-4b78-82da-555bfa2b4b95",
+          "areas": ["Sharing", "Licensing"],
+          "reason": "Tenant-level usage report display settings, which affect the sharing and licensing report output."
+        },
+        {
+          "permission": "RoleManagementPolicy.Read.AzureADGroup",
+          "expectedRoleId": "69e67828-780e-47fd-b28c-7b27d14864e6",
+          "areas": ["Identity"],
+          "reason": "Privileged Identity Management policies for group-based role assignments."
+        }
+      ]
+    },
+    {
+      "name": "Office 365 Exchange Online",
+      "resourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+      "permissions": [
+        {
+          "permission": "Exchange.ManageAsApp",
+          "expectedRoleId": "dc50a0fb-09a3-484d-be87-e023b12c6440",
+          "areas": ["Email"],
+          "reason": "App-only Exchange Online PowerShell. Only Get cmdlets are used; the Global Reader role limits it to reading."
+        }
+      ]
+    },
+    {
+      "name": "WindowsDefenderATP",
+      "resourceAppId": "fc780465-2017-40d4-a0c5-307022471b92",
+      "permissions": [
+        {
+          "permission": "Machine.Read.All",
+          "expectedRoleId": "ea8291d3-4b9a-44b5-bc3a-6cea3026dc79",
+          "areas": ["Defender"],
+          "reason": "Defender for Endpoint device inventory, onboarding health, sensor state and exposure level."
+        },
+        {
+          "permission": "Vulnerability.Read.All",
+          "expectedRoleId": "41269fc5-d04d-4bfd-bce7-43a51cea049a",
+          "areas": ["Defender"],
+          "reason": "Vulnerability and exposed-device counts from Defender Vulnerability Management."
+        },
+        {
+          "permission": "SecurityRecommendation.Read.All",
+          "expectedRoleId": "6443965c-7dd2-4cfd-b38f-bb7772bee163",
+          "areas": ["Defender"],
+          "reason": "Security recommendations from Defender Vulnerability Management."
+        },
+        {
+          "permission": "Software.Read.All",
+          "expectedRoleId": "37f71c98-d198-41ae-964d-2c49aab74926",
+          "areas": ["Defender"],
+          "reason": "Software inventory, end-of-support and vulnerable software."
+        },
+        {
+          "permission": "Score.Read.All",
+          "expectedRoleId": "02b005dd-f804-43b4-8fc7-078460413f74",
+          "areas": ["Defender"],
+          "reason": "Exposure score and device secure score."
+        }
+      ]
+    },
+    {
+      "name": "Microsoft Exchange Online Protection",
+      "resourceAppId": "00000007-0000-0ff1-ce00-000000000000",
+      "permissions": [
+        {
+          "permission": "Exchange.ManageAsApp",
+          "expectedRoleId": "455e5cd2-84e8-4751-8344-5672145dfa17",
+          "areas": ["Purview"],
+          "reason": "App-only Security and Compliance PowerShell (Connect-IPPSSession). Only Get cmdlets are used; the Global Reader role limits it to reading. Separate from the Office 365 Exchange Online grant."
+        }
+      ]
+    }
+  ],
+  "directoryRoles": [
+    {
+      "name": "Global Reader",
+      "roleTemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451",
+      "areas": ["Email", "Sharing", "Posture"],
+      "reason": "Read-only role that scopes Exchange.ManageAsApp and covers admin-center settings not exposed by Graph permissions."
+    }
+  ],
+  "azureRoles": [
+    {
+      "name": "Reader",
+      "scope": "tenant root management group",
+      "reason": "Informational. Read Azure resources and configuration. Not checked or assigned by setup. Azure Policy compliance uses one fixed POST (policyStates latest summarize), a logged, documented read-only exception."
+    },
+    {
+      "name": "Security Reader",
+      "scope": "tenant root management group",
+      "reason": "Informational. Read Microsoft Defender for Cloud recommendations and alerts. Not checked or assigned by setup."
+    }
+  ]
+}

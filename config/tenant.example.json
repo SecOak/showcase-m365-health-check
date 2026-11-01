@@ -1,0 +1,7 @@
+{
+  "ClientName": "contoso",
+  "TenantId": "00000000-0000-0000-0000-000000000000",
+  "AppId": "00000000-0000-0000-0000-000000000000",
+  "CertificateThumbprint": "0000000000000000000000000000000000000000",
+  "InitialDomain": "contoso.onmicrosoft.com"
+}
